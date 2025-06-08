@@ -174,11 +174,11 @@
     </header>
 
     <div class = "container" style = "display : flex; flex-direction : column; gap : 10px; position : fixed; top : 14vh; left : 2vw; border-radius : 20px; padding : 2vh; height : 80vh; width : 20vw; background-color : #3b3b3b; border : none;">
-        <button id = "Course" style = "background-color : white;color : black; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;">Course Management</button>
+        <button id = "Course" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href = 'home.html'">Course Management</button>
         <button id = "AI Chat" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href='homeAIChat.html'">AI Chat</button>
-        <button id = "Connect" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "connect()">Connect</button>
-        <button id = "Test" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "test()">Test and Assessment</button>
-        <button id = "Analysis" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "analysis()">Analysis</button>
+        <button id = "Connect" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href='homeConnectTrainers.html'">Connect</button>
+        <button id = "Test" style = "background-color : white; color : black; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "test()">Test and Assessment</button>
+        <button id = "Analysis" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href='homeAnalysis.html'">Analysis</button>
     </div>
 
 <div class="container" style="visibility : visible; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;">
@@ -186,15 +186,83 @@
     <p style="color: #ccc;">Practice and evaluate your knowledge</p>
 
     <div class="test-container">
-        ${Array.from({ length: 6 }, (_, i) => `
             <div class="test-card">
-                <h3>Test ${i + 1}</h3>
-                <p>Topic: Assessment Area ${i + 1}</p>
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
                 <p>Questions: 10</p>
                 <p>Time: 15 mins</p>
                 <button class="test-btn">Start Test</button>
             </div>
-        `).join('')}
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+            <div class="test-card">
+                <h3>Test</h3>
+                <p>Topic: Assessment Area</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
     </div>
 </div>
 
