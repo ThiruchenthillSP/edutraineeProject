@@ -1,0 +1,281 @@
+<html>
+    <head>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link rel = "stylesheet" href = "styles.css">
+
+        <script>
+            function userSwitchToTrainer()
+            {
+                let student = document.getElementById("Student");
+                let trainer = document.getElementById("Trainer");
+
+                trainer.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+                student.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+            }
+
+            function userSwitchToStudent()
+            {
+                let student = document.getElementById("Student");
+                let trainer = document.getElementById("Trainer");
+
+                student.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+                trainer.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+            }
+
+            function courseSwitchToEnrolled()
+            {
+                let Enrolled = document.getElementById("Enrolled");
+                let Enroll = document.getElementById("Enroll");
+
+                Enrolled.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+                Enroll.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+            }
+
+            function courseSwitchToEnroll()
+            {
+                let Enrolled = document.getElementById("Enrolled");
+                let Enroll = document.getElementById("Enroll");
+
+                Enroll.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+                Enrolled.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+            }
+
+            function course()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                let courseContainer = document.getElementById("courseContainer");
+                let aiContainer = document.getElementById("aiContainer");
+
+                courseContainer.style = "visibility : visible; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+                aiContainer.style = "visibility : hidden; display : flex; flex-direction : column; gap : 2vh; flex-flow: column-reverse; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+
+                course.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+
+                
+            }
+
+            function ai()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                ai.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                
+                let courseContainer = document.getElementById("courseContainer");
+                let aiContainer = document.getElementById("aiContainer");
+
+                courseContainer.style = "visibility : hidden; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+                aiContainer.style = "visibility : visible; display : flex; flex-direction : column; gap : 2vh; flex-flow: column-reverse; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+            }
+
+            function connect()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                connect.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+            }
+
+            function test()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                test.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+            }
+
+            function analysis()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                analysis.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <header style = "position : fixed; display : flex; flex-direction : horizontal; align-items : center; height : 15px; width : 100vw; padding-left : 2vw; padding-top : 30px; padding-bottom : 30px; background-color : black; z-index : 1;">
+            <h1 style = "font-family : 'Poppins', sans-serif; color : antiquewhite;">Trainee</h1>
+
+            <div class = "container" style = "position : absolute; left : 45vw; display : flex; flex-direction : horizontal; height : fit-content; padding : 1vh; width : fit-content; border-radius : 10px; background-color : #3b3b3b; border : none;">
+                <button id = "Student" style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;" onclick = "userSwitchToStudent()">Student</button>
+                <button id = "Trainer" style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;" onclick = "userSwitchToTrainer()">Trainer</button>
+            </div>
+
+            <button style = "font-weight : bold; position : absolute; right : 3vw; background-color : #3b3b3b; border-radius : 30px; font-family : 'Poppins', sans-serif; color : white; font-size : 15px; padding : 20px;">Login / Sign up</button>
+            <a href = "#" style = "position : absolute; right : 15vw;">Contact</a>
+            <a href = "#" style = "position : absolute; right : 21vw;">Pricing</a>
+            <a href = "#" style = "position : absolute; right : 26vw;">Solutions</a>
+            <a href = "#" style = "position : absolute; right : 32vw;">Features</a>
+            <a href = "#" style = "position : absolute; right : 38vw;">Home</a>
+        </header>
+
+        <div class = "container" style = "display : flex; flex-direction : column; gap : 10px; position : fixed; top : 14vh; left : 2vw; border-radius : 20px; padding : 2vh; height : 80vh; width : 20vw; background-color : #3b3b3b; border : none;">
+            <button id = "Course" style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "course()">Course Management</button>
+            <button id = "AI Chat" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "ai()">AI Chat</button>
+            <button id = "Connect" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "connect()">Connect</button>
+            <button id = "Test" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "test()">Test and Assessment</button>
+            <button id = "Analysis" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "analysis()">Analysis</button>
+        </div>
+
+        <div id = "courseContainer" class="container" style = "visibility : visible; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;">
+            <div class = "container" style = "height : 8vh; border : none;">
+                <div class = "container" style = "position : absolute; right : 4vh; display : flex; flex-direction : horizontal; height : fit-content; padding : 1vh; width : fit-content; border-radius : 10px; background-color : #3b3b3b; border : none;">
+                    <button id = "Enrolled" style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;" onclick = "courseSwitchToEnrolled()">Enrolled</button>
+                    <button id = "Enroll" style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;" onclick = "courseSwitchToEnroll()">Enroll</button>
+                </div>
+            </div>
+            <div class = "listcontainer">
+                <div class = "picturecontainer">
+                    <img src = "blockchain.png" width = 100%>
+                </div>
+                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
+                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
+                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
+                    <div class = "container" style = "background-color : white; height : 100%; width : 60%;"></div>
+                    <p style = "color : white;">60%</p>
+                </div>
+            </div>
+            <div class = "listcontainer">
+                <div class = "picturecontainer">
+                    <img src = "blockchain.png" width = 100%>
+                </div>
+                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
+                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
+                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
+                    <div class = "container" style = "background-color : white; height : 100%; width : 95%;"></div>
+                    <p style = "color : white;">95%</p>
+                </div>
+            </div>
+            <div class = "listcontainer">
+                <div class = "picturecontainer">
+                    <img src = "blockchain.png" width = 100%>
+                </div>
+                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
+                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
+                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
+                    <div class = "container" style = "background-color : white; height : 100%; width : 95%;"></div>
+                    <p style = "color : white;">95%</p>
+                </div>
+            </div>
+            <div class = "listcontainer">
+                <div class = "picturecontainer">
+                    <img src = "blockchain.png" width = 100%>
+                </div>
+                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
+                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
+                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
+                    <div class = "container" style = "background-color : white; height : 100%; width : 55%;"></div>
+                    <p style = "color : white;">55%</p>
+                </div>
+            </div>
+            <div class = "listcontainer">
+                <div class = "picturecontainer">
+                    <img src = "blockchain.png" width = 100%>
+                </div>
+                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
+                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
+                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
+                    <div class = "container" style = "background-color : white; height : 100%; width : 20%;"></div>
+                    <p style = "color : white;">20%</p>
+                </div>
+            </div>
+            <div class = "listcontainer">
+                <div class = "picturecontainer">
+                    <img src = "blockchain.png" width = 100%>
+                </div>
+                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
+                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
+                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
+                    <div class = "container" style = "background-color : white; height : 100%; width : 10%;"></div>
+                    <p style = "color : white;">10%</p>
+                </div>
+            </div>
+            <div class = "listcontainer">
+                <div class = "picturecontainer">
+                    <img src = "blockchain.png" width = 100%>
+                </div>
+                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
+                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
+                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
+                    <div class = "container" style = "background-color : white; height : 100%; width : 70%;"></div>
+                    <p style = "color : white;">70%</p>
+                </div>
+            </div>
+        </div>
+
+        <div id = "aiContainer" class="container" style = "visibility : hidden; display : flex; flex-direction : column; gap : 2vh; flex-flow: column-reverse; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;">
+            <div class = "container" style = "display : flex; flex-direction : row; position : sticky; background-color : black; height : fit-content; width : 90%;">
+                <input type = "text" class = "container" style = "padding : 2vh; border : none; width : 100%; height : 100%; color : white;" placeholder = "Enter your message here..."></textarea>
+                <button style = "color : black; background-color : white; border-radius : 10px; height : 5vh; width : 7vh; padding : 1vh;">Send</button>
+            </div>
+            
+            <div class = "container" style = "background-color : #3b3b3b; height : 10vh; width : 20vw;">
+                <p style = "margin-left : 2vh;">AI Message</p>
+            </div>
+
+            <div class = "container" style = "margin-left : 70%; background-color : #3b3b3b; height : 10vh; width : 20vw;">
+                <p style = "margin-left : 2vh;">User Message</p>
+            </div>
+
+            <div class = "container" style = "background-color : #3b3b3b; height : 10vh; width : 20vw;">
+                <p style = "margin-left : 2vh;">AI Message</p>
+            </div>
+
+            <div class = "container" style = "margin-left : 70%; background-color : #3b3b3b; height : 10vh; width : 20vw;">
+                <p style = "margin-left : 2vh;">User Message</p>
+            </div>
+
+            <div class = "container" style = "background-color : #3b3b3b; height : 10vh; width : 20vw;">
+                <p style = "margin-left : 2vh;">AI Message</p>
+            </div>
+
+            <div class = "container" style = "margin-left : 70%; background-color : #3b3b3b; height : 10vh; width : 20vw;">
+                <p style = "margin-left : 2vh;">User Message</p>
+            </div>
+        </div>
+    </body>
+</html>
