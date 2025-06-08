@@ -12,6 +12,11 @@
             {
                 let student = document.getElementById("Student");
                 let trainer = document.getElementById("Trainer");
+                let studentContainer = document.getElementById("connectStudents");
+                let trainerContainer = document.getElementById("connectTrainers");
+
+                trainerContainer.style = "visibility : visible; position : relative; border : none; height : 100%; width : 100%;";
+                studentContainer.style = "visibility : hidden; position : relative; border : none; height : 100%; width : 100%;";
 
                 trainer.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
                 student.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
@@ -140,11 +145,6 @@
         <header style = "position : fixed; display : flex; flex-direction : horizontal; align-items : center; height : 15px; width : 100vw; padding-left : 2vw; padding-top : 30px; padding-bottom : 30px; background-color : black; z-index : 1;">
             <h1 style = "font-family : 'Poppins', sans-serif; color : antiquewhite;">Trainee</h1>
 
-            <div class = "container" style = "position : absolute; left : 45vw; display : flex; flex-direction : horizontal; height : fit-content; padding : 1vh; width : fit-content; border-radius : 10px; background-color : #3b3b3b; border : none;">
-                <button id = "Student" style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;" onclick = "userSwitchToStudent()">Student</button>
-                <button id = "Trainer" style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;" onclick = "userSwitchToTrainer()">Trainer</button>
-            </div>
-
             <button style = "font-weight : bold; position : absolute; right : 3vw; background-color : #3b3b3b; border-radius : 30px; font-family : 'Poppins', sans-serif; color : white; font-size : 15px; padding : 20px;">Login / Sign up</button>
             <a href = "#" style = "position : absolute; right : 15vw;">Contact</a>
             <a href = "#" style = "position : absolute; right : 21vw;">Pricing</a>
@@ -154,95 +154,110 @@
         </header>
 
         <div class = "container" style = "display : flex; flex-direction : column; gap : 10px; position : fixed; top : 14vh; left : 2vw; border-radius : 20px; padding : 2vh; height : 80vh; width : 20vw; background-color : #3b3b3b; border : none;">
-            <button id = "Course" style = "background-color : white; color : black; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;">Course Management</button>
-            <button id = "AI Chat" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href='homeAIChat.html'">AI Chat</button>
-            <button id = "Connect" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "connect()">Connect</button>
+            <button id = "Course" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href='home.html'">Course Management</button>
+            <button id = "AI Chat" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;">AI Chat</button>
+            <button id = "Connect" style = "background-color : white; color : black; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "connect()">Connect</button>
             <button id = "Test" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "test()">Test and Assessment</button>
             <button id = "Analysis" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "analysis()">Analysis</button>
         </div>
 
-        <div id = "courseContainer" class="container" style = "position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;">
-            <div class = "container" style = "height : 8vh; border : none;">
-                <div class = "container" style = "position : absolute; right : 4vh; display : flex; flex-direction : horizontal; height : fit-content; padding : 1vh; width : fit-content; border-radius : 10px; background-color : #3b3b3b; border : none;">
-                    <button id = "Enrolled" style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;" onclick = "courseSwitchToEnrolled()">Enrolled</button>
-                    <button id = "Enroll" style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;" onclick = "courseSwitchToEnroll()">Enroll</button>
-                </div>
+        <div id = "connectContainer" class="connectContainer" style = "display : flex; flex-direction : column; gap : 2vh; position : absolute; width : 72vw; height : 83vh; top : 14vh; right : 2vw;">
+            <div class = "container" style = "position : relative; left : 60vw;  display : flex; flex-direction : horizontal; height : fit-content; padding : 1vh; width : fit-content; border-radius : 10px; background-color : #3b3b3b; border : none;">
+                <button id = "Student" style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;">Student</button>
+                <button id = "Trainer" style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;" onclick = "window.location.href='homeConnectTrainers.html'">Trainer</button>
             </div>
-            <div class = "listcontainer">
-                <div class = "picturecontainer">
-                    <img src = "blockchain.png" width = 100%>
+
+            <div id = "connectStudents" class = "Container" style = "visibility : visible; border : none; height : 100%; width : 100%;">
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer" style = "height : 51vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
                 </div>
-                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
-                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
-                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
-                    <div class = "container" style = "background-color : white; height : 100%; width : 60%;"></div>
-                    <p style = "color : white;">60%</p>
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
                 </div>
-            </div>
-            <div class = "listcontainer">
-                <div class = "picturecontainer">
-                    <img src = "blockchain.png" width = 100%>
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
                 </div>
-                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
-                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
-                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
-                    <div class = "container" style = "background-color : white; height : 100%; width : 95%;"></div>
-                    <p style = "color : white;">95%</p>
-                </div>
-            </div>
-            <div class = "listcontainer">
-                <div class = "picturecontainer">
-                    <img src = "blockchain.png" width = 100%>
-                </div>
-                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
-                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
-                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
-                    <div class = "container" style = "background-color : white; height : 100%; width : 95%;"></div>
-                    <p style = "color : white;">95%</p>
-                </div>
-            </div>
-            <div class = "listcontainer">
-                <div class = "picturecontainer">
-                    <img src = "blockchain.png" width = 100%>
-                </div>
-                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
-                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
-                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
-                    <div class = "container" style = "background-color : white; height : 100%; width : 55%;"></div>
-                    <p style = "color : white;">55%</p>
-                </div>
-            </div>
-            <div class = "listcontainer">
-                <div class = "picturecontainer">
-                    <img src = "blockchain.png" width = 100%>
-                </div>
-                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
-                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
-                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
-                    <div class = "container" style = "background-color : white; height : 100%; width : 20%;"></div>
-                    <p style = "color : white;">20%</p>
-                </div>
-            </div>
-            <div class = "listcontainer">
-                <div class = "picturecontainer">
-                    <img src = "blockchain.png" width = 100%>
-                </div>
-                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
-                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
-                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
-                    <div class = "container" style = "background-color : white; height : 100%; width : 10%;"></div>
-                    <p style = "color : white;">10%</p>
-                </div>
-            </div>
-            <div class = "listcontainer">
-                <div class = "picturecontainer">
-                    <img src = "blockchain.png" width = 100%>
-                </div>
-                <h2 style = "margin-left : 2vh; color : white;">Course Name</h2>
-                <p style = "color : white; position : relative; left : -23vh; top : 10vh;">Description of the course</p>
-                <div class = "container" style = "display : flex; flex-direction : row; height : 2vh; width : 20vw; position : relative; left : -50vh; top : 23vh;">
-                    <div class = "container" style = "background-color : white; height : 100%; width : 70%;"></div>
-                    <p style = "color : white;">70%</p>
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
+                    <div class = "personContainer" style = "height : 40vh;">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">CIT<br>B.Tech IT</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,476 @@
+<html>
+    <head>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link rel = "stylesheet" href = "styles.css">
+
+        <script>
+            function userSwitchToTrainer()
+            {
+                let student = document.getElementById("Student");
+                let trainer = document.getElementById("Trainer");
+                let studentContainer = document.getElementById("connectStudents");
+                let trainerContainer = document.getElementById("connectTrainers");
+
+                trainerContainer.style = "visibility : visible; position : relative; border : none; height : 100%; width : 100%;";
+                studentContainer.style = "visibility : hidden; position : relative; border : none; height : 100%; width : 100%;";
+
+                trainer.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+                student.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+            }
+
+            function userSwitchToStudent()
+            {
+                let student = document.getElementById("Student");
+                let trainer = document.getElementById("Trainer");
+
+                let studentContainer = document.getElementById("connectStudents");
+                let trainerContainer = document.getElementById("connectTrainers");
+
+                trainerContainer.style = "visibility : hidden; position : relative; border : none; height : 100%; width : 100%;";
+                studentContainer.style = "visibility : visible; position : relative; border : none; height : 100%; width : 100%;";
+
+                student.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+                trainer.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+            }
+
+            function courseSwitchToEnrolled()
+            {
+                let Enrolled = document.getElementById("Enrolled");
+                let Enroll = document.getElementById("Enroll");
+
+                Enrolled.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+                Enroll.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+            }
+
+            function courseSwitchToEnroll()
+            {
+                let Enrolled = document.getElementById("Enrolled");
+                let Enroll = document.getElementById("Enroll");
+
+                Enroll.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+                Enrolled.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+            }
+
+            function course()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                let courseContainer = document.getElementById("courseContainer");
+                let aiContainer = document.getElementById("aiContainer");
+
+                courseContainer.style = "visibility : visible; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+                aiContainer.style = "visibility : hidden; display : flex; flex-direction : column; gap : 2vh; flex-flow: column-reverse; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+
+                course.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+
+                
+            }
+
+            function ai()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                ai.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                
+                let courseContainer = document.getElementById("courseContainer");
+                let aiContainer = document.getElementById("aiContainer");
+
+                courseContainer.style = "visibility : hidden; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+                aiContainer.style = "visibility : visible; display : flex; flex-direction : column; gap : 2vh; flex-flow: column-reverse; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+            }
+
+            function connect()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                connect.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+            }
+
+            function test()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                test.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+            }
+
+            function analysis()
+            {
+                let course = document.getElementById("Course");
+                let ai = document.getElementById("AI Chat");
+                let connect = document.getElementById("Connect");
+                let test = document.getElementById("Test");
+                let analysis = document.getElementById("Analysis");
+
+                analysis.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+                connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+                test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+                ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <header style = "position : fixed; display : flex; flex-direction : horizontal; align-items : center; height : 15px; width : 100vw; padding-left : 2vw; padding-top : 30px; padding-bottom : 30px; background-color : black; z-index : 1;">
+            <h1 style = "font-family : 'Poppins', sans-serif; color : antiquewhite;">Trainee</h1>
+
+            <button style = "font-weight : bold; position : absolute; right : 3vw; background-color : #3b3b3b; border-radius : 30px; font-family : 'Poppins', sans-serif; color : white; font-size : 15px; padding : 20px;">Login / Sign up</button>
+            <a href = "#" style = "position : absolute; right : 15vw;">Contact</a>
+            <a href = "#" style = "position : absolute; right : 21vw;">Pricing</a>
+            <a href = "#" style = "position : absolute; right : 26vw;">Solutions</a>
+            <a href = "#" style = "position : absolute; right : 32vw;">Features</a>
+            <a href = "#" style = "position : absolute; right : 38vw;">Home</a>
+        </header>
+
+        <div class = "container" style = "display : flex; flex-direction : column; gap : 10px; position : fixed; top : 14vh; left : 2vw; border-radius : 20px; padding : 2vh; height : 80vh; width : 20vw; background-color : #3b3b3b; border : none;">
+            <button id = "Course" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href='home.html'">Course Management</button>
+            <button id = "AI Chat" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;">AI Chat</button>
+            <button id = "Connect" style = "background-color : white; color : black; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "connect()">Connect</button>
+            <button id = "Test" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "test()">Test and Assessment</button>
+            <button id = "Analysis" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "analysis()">Analysis</button>
+        </div>
+
+        <div id = "connectContainer" class="connectContainer" style = "display : flex; flex-direction : column; gap : 2vh; position : absolute; width : 72vw; height : 83vh; top : 14vh; right : 2vw;">
+            <div class = "container" style = "position : relative; left : 60vw;  display : flex; flex-direction : horizontal; height : fit-content; padding : 1vh; width : fit-content; border-radius : 10px; background-color : #3b3b3b; border : none;">
+                <button id = "Student" style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;" onclick = "window.location.href='homeConnectStudents.html'">Student</button>
+                <button id = "Trainer" style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;">Trainer</button>
+            </div>
+
+            <div id = "connectTrainers" class = "Container" style = "visibility : visible; border : none; height : 100%; width : 100%;">
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                </div>
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                </div>
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                </div>
+                <div id = "container" style = "display : flex; flex-direction : row; height : fit-content; width : 100%;">
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                    <div class = "personContainer" style = "background-color : #363f49">
+                        <img src = "instructor.png" style = "margin-top : 2vh; height : 20vh; width : 20vh; border-radius : 20vh; background-color : black;">
+                        <h3>Ms. Lara Catherine</h3>
+                        <p style = "color : #D9E4E9">Professor<br>Data Analytics</p>
+
+                        
+                        <p style = "color : #D9E4E9; font-size : 14px;">Rating</p>
+                        <center>
+                        <div class = "container" style = "position : relative; top : -1vh; border : none; display : flex; flex-direction : row; height : 1vh; width : 70%;">
+                            <div class = "container" style = "background-color : #8FB1CC; border : none; height : 100%; width : 78%;"></div>
+                            <p style = "color : #D9E4E9; font-size : 12px;">3.9</p>
+                        </div>
+                        </center>
+
+                        <hr style = "margin-left : 15px; margin-right : 15px; margin-top : 3vh;">
+
+                        <button style = "margin-top : 1vh; background-color : white; height : 6vh; width : 10vw; border-radius : 10vh;">Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -35,6 +35,12 @@ button
     border-radius : 10px;
 }
 
+.connectContainer
+{
+    backdrop-filter : blur(10px);
+    background-color: black;
+}
+
 .listcontainer
 {
     display : flex;
@@ -186,3 +192,17 @@ body {
             background-color: #111;
             color: #999;
         }
+
+h3
+{
+    color : #D9E4E9;
+}
+
+.personContainer
+{
+    height : 60vh; width : 15vw; background-color : #3b3b3b;
+    backdrop-filter : blur(10px);
+    border-radius : 10px;
+    margin : 2vh;
+    text-align : center;
+}
