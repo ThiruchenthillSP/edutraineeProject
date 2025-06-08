@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .test-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .test-card {
+            background-color: #3b3b3b;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: left;
+            color: white;
+        }
+
+        .test-btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1.2rem;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+
+<script>
+    function userSwitchToTrainer()
+    {
+        let student = document.getElementById("Student");
+        let trainer = document.getElementById("Trainer");
+
+        trainer.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+        student.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+    }
+
+    function userSwitchToStudent()
+    {
+        let student = document.getElementById("Student");
+        let trainer = document.getElementById("Trainer");
+
+        student.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+        trainer.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+    }
+
+    function courseSwitchToEnrolled()
+    {
+        let Enrolled = document.getElementById("Enrolled");
+        let Enroll = document.getElementById("Enroll");
+
+        Enrolled.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+        Enroll.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+    }
+
+    function courseSwitchToEnroll()
+    {
+        let Enrolled = document.getElementById("Enrolled");
+        let Enroll = document.getElementById("Enroll");
+
+        Enroll.style = "background-color : white; color : black; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; margin-right : 10px; padding : 1vh;";
+        Enrolled.style = "background-color : #3b3b3b; color : white; border-radius : 7px; padding : 1px; font-family : 'Poppins', sans-serif; padding : 1vh;";
+    }
+
+    function course()
+    {
+        let course = document.getElementById("Course");
+        let ai = document.getElementById("AI Chat");
+        let connect = document.getElementById("Connect");
+        let test = document.getElementById("Test");
+        let analysis = document.getElementById("Analysis");
+
+        let courseContainer = document.getElementById("courseContainer");
+        let aiContainer = document.getElementById("aiContainer");
+
+        courseContainer.style = "visibility : visible; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+        aiContainer.style = "visibility : hidden; display : flex; flex-direction : column; gap : 2vh; flex-flow: column-reverse; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+
+        course.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+        connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+        analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+
+        
+    }
+
+    function ai()
+    {
+        let course = document.getElementById("Course");
+        let ai = document.getElementById("AI Chat");
+        let connect = document.getElementById("Connect");
+        let test = document.getElementById("Test");
+        let analysis = document.getElementById("Analysis");
+
+        ai.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+        connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+        analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        
+        let courseContainer = document.getElementById("courseContainer");
+        let aiContainer = document.getElementById("aiContainer");
+
+        courseContainer.style = "visibility : hidden; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+        aiContainer.style = "visibility : visible; display : flex; flex-direction : column; gap : 2vh; flex-flow: column-reverse; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;";
+    }
+
+    function connect()
+    {
+        let course = document.getElementById("Course");
+        let ai = document.getElementById("AI Chat");
+        let connect = document.getElementById("Connect");
+        let test = document.getElementById("Test");
+        let analysis = document.getElementById("Analysis");
+
+        connect.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+        ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+        analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+    }
+
+    function test()
+    {
+        let course = document.getElementById("Course");
+        let ai = document.getElementById("AI Chat");
+        let connect = document.getElementById("Connect");
+        let test = document.getElementById("Test");
+        let analysis = document.getElementById("Analysis");
+
+        test.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+        connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+        analysis.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+    }
+
+    function analysis()
+    {
+        let course = document.getElementById("Course");
+        let ai = document.getElementById("AI Chat");
+        let connect = document.getElementById("Connect");
+        let test = document.getElementById("Test");
+        let analysis = document.getElementById("Analysis");
+
+        analysis.style = "background-color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";
+        connect.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        course.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+        test.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                                
+        ai.style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;";                
+    }
+</script>
+</head>
+<body>
+
+    <header style = "position : fixed; display : flex; flex-direction : horizontal; align-items : center; height : 15px; width : 100vw; padding-left : 2vw; padding-top : 30px; padding-bottom : 30px; background-color : black; z-index : 1;">
+        <h1 style = "font-family : 'Poppins', sans-serif; color : antiquewhite;">Trainee</h1>
+
+        <button style = "font-weight : bold; position : absolute; right : 3vw; background-color : #3b3b3b; border-radius : 30px; font-family : 'Poppins', sans-serif; color : white; font-size : 15px; padding : 20px;">Login / Sign up</button>
+        <a href = "#" style = "position : absolute; right : 15vw;">Contact</a>
+        <a href = "#" style = "position : absolute; right : 21vw;">Pricing</a>
+        <a href = "#" style = "position : absolute; right : 26vw;">Solutions</a>
+        <a href = "#" style = "position : absolute; right : 32vw;">Features</a>
+        <a href = "#" style = "position : absolute; right : 38vw;">Home</a>
+    </header>
+
+    <div class = "container" style = "display : flex; flex-direction : column; gap : 10px; position : fixed; top : 14vh; left : 2vw; border-radius : 20px; padding : 2vh; height : 80vh; width : 20vw; background-color : #3b3b3b; border : none;">
+        <button id = "Course" style = "background-color : white;color : black; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;">Course Management</button>
+        <button id = "AI Chat" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "window.location.href='homeAIChat.html'">AI Chat</button>
+        <button id = "Connect" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "connect()">Connect</button>
+        <button id = "Test" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "test()">Test and Assessment</button>
+        <button id = "Analysis" style = "background-color : transparent; color : white; width : 97%; height : 7vh; padding-left : 10px; font-size : 15px; border-radius : 10px;" onclick = "analysis()">Analysis</button>
+    </div>
+
+<div class="container" style="visibility : visible; position : absolute; border : none; border-radius : 10px; width : 72vw; height : 83vh; top : 14vh; right : 2vw;">
+    <h2 style="color: white;">Test and Assessment</h2>
+    <p style="color: #ccc;">Practice and evaluate your knowledge</p>
+
+    <div class="test-container">
+        ${Array.from({ length: 6 }, (_, i) => `
+            <div class="test-card">
+                <h3>Test ${i + 1}</h3>
+                <p>Topic: Assessment Area ${i + 1}</p>
+                <p>Questions: 10</p>
+                <p>Time: 15 mins</p>
+                <button class="test-btn">Start Test</button>
+            </div>
+        `).join('')}
+    </div>
+</div>
+
+</body>
+</html>
