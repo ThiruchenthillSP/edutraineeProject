@@ -206,3 +206,13 @@ h3
     margin : 2vh;
     text-align : center;
 }
+
+.filledDot
+{
+    position : absolute; top : -1.5vh; height : 5vh; width : 5vh; background-color : white; border : none; border-radius : 5vh;
+}
+
+.unfilledDot
+{
+    position : absolute; top : -1.5vh; height : 5vh; width : 5vh; background-color : #3b3b3b; border : none; border-radius : 5vh;
+}
