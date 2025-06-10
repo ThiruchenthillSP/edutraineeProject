@@ -1,10 +1,24 @@
 // pages/connect-students.js
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import LiveStatusBadge from "@/components/liveStatusBadge";
 import CourseProgress from "@/components/courseProgress";
 
 export default function ConnectStudents() {
+  const [onlineStatus, setOnlineStatus] = useState({});
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const status = {};
+      students.forEach(student => {
+        status[student.name] = Math.random() > 0.5; // randomly online/offline
+      });
+      setOnlineStatus(status);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     window.course = function () {
       let connectContainer = document.getElementById("connectStudentsContainer");
@@ -45,9 +59,9 @@ export default function ConnectStudents() {
         </header>
 
         <div className="container" style={{ display: "flex", flexDirection: "column", gap: "10px", position: "fixed", top: "14vh", left: "2vw", borderRadius: "20px", padding: "2vh", height: "80vh", width: "20vw", backgroundColor: "#3b3b3b", border: "none" }}>
-          <button id="Course" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homejs")}>Course Management</button>
+          <button id="Course" style={{ backgroundColor: "white", color: "black", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homejs")}>Course Management</button>
           <button id="AI Chat" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeAIChatjs")}>AI Chat</button>
-          <button id="Connect" style={{ backgroundColor: "white", color: "black", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeConnectTrainersjs")}>Connect</button>
+          <button id="Connect" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeConnectTrainersjs")}>Connect</button>
           <button id="Test" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeTestjs")}>Test and Assessment</button>
           <button id="Analysis" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeAnalysisjs")}>Analysis</button>
         </div>
@@ -76,8 +90,6 @@ export default function ConnectStudents() {
             <button id="Trainer" style={{ backgroundColor: "#3b3b3b", color: "white", borderRadius: "7px", padding: "1vh", fontFamily: "'Poppins', sans-serif" }} onClick={() => (window.location.href = "homeConnectTrainersjs")}>Trainer</button>
           </div>
 
-          <h2 style={{ marginBottom: "1vh" }}>Connected Students</h2>
-
           {students.map((student, index) => (
             <div
               key={index}
@@ -90,7 +102,9 @@ export default function ConnectStudents() {
               <h3 style={{ color: "#fff", marginBottom: "0.5rem" }}>{student.name}</h3>
               <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>{student.course}</p>
               <LiveStatusBadge name={student.name} role={student.role} />
-              <CourseProgress courseName={student.course} initialProgress={student.progress} />
+              {onlineStatus[student.name] && (
+                <CourseProgress courseName={student.course} initialProgress={student.progress} />
+              )}
             </div>
           ))}
         </div>
