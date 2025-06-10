@@ -1,6 +1,7 @@
 // pages/connect-students.js
 import Head from "next/head";
 import { useEffect } from "react";
+import LiveStatusBadge from "@/components/liveStatusBadge";
 
 export default function ConnectStudents() {
   useEffect(() => {
@@ -43,12 +44,13 @@ export default function ConnectStudents() {
         </header>
 
         <div className="container" style={{ display: "flex", flexDirection: "column", gap: "10px", position: "fixed", top: "14vh", left: "2vw", borderRadius: "20px", padding: "2vh", height: "80vh", width: "20vw", backgroundColor: "#3b3b3b", border: "none" }}>
-          <button id="Course" style = {{backgroundColor : "transparent", color : "white", width : "97%", height : "7vh", paddingLeft : "10px", fontSize : "15px", borderRadius : "10px" }} onClick={() => (window.location.href = "homejs")}>Course Management</button>
-          <button id="AI Chat" style = {{backgroundColor : "transparent", color : "white", width : "97%", height : "7vh", paddingLeft : "10px", fontSize : "15px", borderRadius : "10px" }} onClick={() => (window.location.href = "homeAIChatjs")}>AI Chat</button>
-          <button id="Connect" style = {{backgroundColor : "white", color : "black", width : "97%", height : "7vh", paddingLeft : "10px", fontSize : "15px", borderRadius : "10px" }} onClick={() => (window.location.href = "homeConnectTrainersjs")}>Connect</button>
-          <button id="Test" style = {{backgroundColor : "transparent", color : "white", width : "97%", height : "7vh", paddingLeft : "10px", fontSize : "15px", borderRadius : "10px" }} onClick={() => (window.location.href = "homeTestjs")}>Test and Assessment</button>
-          <button id="Analysis" style = {{backgroundColor : "transparent", color : "white", width : "97%", height : "7vh", paddingLeft : "10px", fontSize : "15px", borderRadius : "10px" }} onClick={() => (window.location.href = "homeAnalysisjs")}>Analysis</button>
+          <button id="Course" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homejs")}>Course Management</button>
+          <button id="AI Chat" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeAIChatjs")}>AI Chat</button>
+          <button id="Connect" style={{ backgroundColor: "white", color: "black", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeConnectTrainersjs")}>Connect</button>
+          <button id="Test" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeTestjs")}>Test and Assessment</button>
+          <button id="Analysis" style={{ backgroundColor: "transparent", color: "white", width: "97%", height: "7vh", paddingLeft: "10px", fontSize: "15px", borderRadius: "10px" }} onClick={() => (window.location.href = "homeAnalysisjs")}>Analysis</button>
         </div>
+
         <div
           id="connectStudentsContainer"
           style={{
@@ -68,10 +70,11 @@ export default function ConnectStudents() {
             fontFamily: "'Poppins', sans-serif"
           }}
         >
-            <div class = "container" style = {{position : "relative", left : "60vw",  display : "flex", flexDirection : "horizontal", height : "fit-content", padding : "1vh", width : "fit-content", borderRadius : "10px", backgroundColor : "#3b3b3b", border : "none"}}>
-                <button id = "Student" style={{ backgroundColor: "white", color: "black", borderRadius: "7px", padding: "1vh", fontFamily: "'Poppins', sans-serif", marginRight: "10px" }}>Student</button>
-                <button id = "Trainer" style={{ backgroundColor: "#3b3b3b", color: "white", borderRadius: "7px", padding: "1vh", fontFamily: "'Poppins', sans-serif" }} onClick={() => (window.location.href = "homeConnectTrainersjs")}>Trainer</button>
-            </div>
+          <div className="container" style={{ position: "relative", left: "60vw", display: "flex", flexDirection: "row", height: "fit-content", padding: "1vh", width: "fit-content", borderRadius: "10px", backgroundColor: "#3b3b3b", border: "none" }}>
+            <button id="Student" style={{ backgroundColor: "white", color: "black", borderRadius: "7px", padding: "1vh", fontFamily: "'Poppins', sans-serif", marginRight: "10px" }}>Student</button>
+            <button id="Trainer" style={{ backgroundColor: "#3b3b3b", color: "white", borderRadius: "7px", padding: "1vh", fontFamily: "'Poppins', sans-serif" }} onClick={() => (window.location.href = "homeConnectTrainersjs")}>Trainer</button>
+          </div>
+
           <h2 style={{ marginBottom: "1vh" }}>Connected Students</h2>
 
           {students.map((student, index) => (
@@ -83,9 +86,9 @@ export default function ConnectStudents() {
                 borderRadius: "10px"
               }}
             >
-              <h3 style={{ color: "#fff", marginBottom: "0.5rem" }}>{student.name}</h3>
-              <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>{student.status}</p>
-              <span style={{ color: "#0f0" }}>{student.course}</span>
+              <h3 style={{ color: "#fff", marginBottom: "0.5rem", width : "fitContent" }}>{student.name} <span style = {{fontSize : "15px"}}><LiveStatusBadge key={index} name={student.name} role={student.role} /></span> </h3>
+
+              <span style={{ color: "white" }}>{student.course}</span>
             </div>
           ))}
         </div>
