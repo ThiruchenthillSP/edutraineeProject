@@ -28,7 +28,7 @@ export default function Home() {
                 <a href="#features">Why Us?</a>
                 <a href="#pricing">Plans</a>
                 <a href="#how">How it Works</a>
-                <a href="home.html">Login</a>
+                <a href="homeAIChat.html">Login</a>
             </div>
         </div>
 
