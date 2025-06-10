@@ -1,24 +1,10 @@
 // pages/connect-students.js
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import LiveStatusBadge from "@/components/liveStatusBadge";
 import CourseProgress from "@/components/courseProgress";
 
 export default function ConnectStudents() {
-  const [onlineStatus, setOnlineStatus] = useState({});
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const status = {};
-      students.forEach(student => {
-        status[student.name] = Math.random() > 0.5; // randomly online/offline
-      });
-      setOnlineStatus(status);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   useEffect(() => {
     window.course = function () {
       let connectContainer = document.getElementById("connectStudentsContainer");
@@ -104,9 +90,7 @@ export default function ConnectStudents() {
               <h3 style={{ color: "#fff", marginBottom: "0.5rem" }}>{student.name}</h3>
               <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>{student.course}</p>
               <LiveStatusBadge name={student.name} role={student.role} />
-              {onlineStatus[student.name] && (
-                <CourseProgress courseName={student.course} initialProgress={student.progress} />
-              )}
+              <CourseProgress courseName={student.course} initialProgress={student.progress} />
             </div>
           ))}
         </div>
