@@ -1,6 +1,7 @@
 // pages/connect-trainers.js
 import Head from "next/head";
 import { useEffect } from "react";
+import LiveStatusBadge from "@/components/liveStatusBadge";
 
 export default function ConnectTrainers() {
   useEffect(() => {
@@ -87,9 +88,8 @@ export default function ConnectTrainers() {
                 borderRadius: "10px"
               }}
             >
-              <h3 style={{ color: "#fff", marginBottom: "0.5rem" }}>{trainer.name}</h3>
-              <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>{trainer.status}</p>
-              <span style={{ color: "#0f0" }}>{trainer.subject}</span>
+              <h3 style={{ color: "#fff", marginBottom: "0.5rem" }}>{trainer.name}<span style = {{fontSize : "15px"}}><LiveStatusBadge key={index} name={trainer.name} role={trainer.role} /></span></h3>
+              <span style={{ color: "white" }}>{trainer.subject}</span>
             </div>
           ))}
         </div>
