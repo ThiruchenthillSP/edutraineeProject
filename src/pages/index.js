@@ -28,14 +28,14 @@ export default function Home() {
                 <a href="#features">Why Us?</a>
                 <a href="#pricing">Plans</a>
                 <a href="#how">How it Works</a>
-                <a href="homeAIChat.html">Login</a>
+                <a href="homejs">Login</a>
             </div>
         </div>
 
         <div className="hero">
             <h1>Smarter Learning, Your Way</h1>
             <p>EduTrainee is your personal learning buddy — helping students and trainers connect, learn, chat, and grow together, all in one simple platform.</p>
-            <button onClick = {() => (window.location.href='home.html')}>Jump In</button>
+            <button onClick = {() => (window.location.href='homejs')}>Jump In</button>
         </div>
 
         <div id="features" className="section">
