@@ -1,12 +1,11 @@
-// pages/_app.js
 import "@/styles/globals.css";
-import { Analytics } from "@vercel/analytics/react"; // ✅ Import Vercel Analytics
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <Component {...pageProps} />
-      <Analytics /> {/* ✅ Enables Vercel Analytics tracking */}
+      <Analytics /> {}
     </>
   );
 }
