@@ -1,31 +1,30 @@
 // lib/firebase.js
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDmBdg8tE7WZuOiLVZw-gzQv5IPWSNjjQU",
-  authDomain: "edutrainee-d2eec.firebaseapp.com",
-  projectId: "edutrainee-d2eec",
-  storageBucket: "edutrainee-d2eec.appspot.com", // fixed
-  messagingSenderId: "653532554303",
-  appId: "1:653532554303:web:df0f6f49778c01d8b8048a",
-  measurementId: "G-RTDGJ476N8"
+  apiKey: "AIzaSyDfzTtRfHwMC5JO16AqpkNd2n81I_7PmTM",
+  authDomain: "edutrainee-47438.firebaseapp.com",
+  projectId: "edutrainee-47438",
+  storageBucket: "edutrainee-47438.appspot.com",
+  messagingSenderId: "721866540600",
+  appId: "1:721866540600:web:7982f5ef86ada5673c48cd",
+  measurementId: "G-DBT8MP3YSC"
 };
 
-const app = initializeApp(firebaseConfig);
+// ✅ Prevent re-initializing app in development (Next.js hot reload fix)
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+
 export const db = getFirestore(app);
 
-// ✅ Analytics (only in browser)
+// ✅ Optional: Enable analytics only in client
 let analytics = null;
-
 if (typeof window !== "undefined") {
   isSupported().then((supported) => {
     if (supported) {
       analytics = getAnalytics(app);
       console.log("✅ Firebase Analytics initialized");
-    } else {
-      console.log("⚠️ Firebase Analytics not supported in this environment");
     }
   });
 }

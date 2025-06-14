@@ -1,5 +1,8 @@
+// pages/homeAIChatjs.js
 import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
+import { analytics } from "../lib/firebase"; // ✅ Analytics import
+import { logEvent } from "firebase/analytics";
 
 export default function AIChat() {
   const [input, setInput] = useState("");
@@ -13,10 +16,14 @@ export default function AIChat() {
         "display: flex; flex-direction: column; gap: 2vh; position: absolute; border: none; border-radius: 10px; width: 72vw; height: 83vh; top: 14vh; right: 2vw; background-color: transparent; color: white; font-family: 'Poppins', sans-serif;";
     };
     window.course();
+
+    // ✅ Log page view
+    if (analytics) {
+      logEvent(analytics, "page_view_ai_chat");
+    }
   }, []);
 
   useEffect(() => {
-    // Scroll to bottom when messages update
     chatRef.current?.scrollTo({ top: chatRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
@@ -25,6 +32,14 @@ export default function AIChat() {
 
     const userMessage = { sender: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
+
+    // ✅ Log message sent event
+    if (analytics) {
+      logEvent(analytics, "ai_chat_message_sent", {
+        content_length: input.length,
+      });
+    }
+
     setInput("");
 
     const res = await fetch("/api/chat", {
@@ -70,6 +85,7 @@ export default function AIChat() {
           <button id="Test" style = {{backgroundColor : "transparent", color : "white", width : "97%", height : "7vh", paddingLeft : "10px", fontSize : "15px", borderRadius : "10px" }} onClick={() => (window.location.href = "homeTestjs")}>Test and Assessment</button>
           <button id="Analysis" style = {{backgroundColor : "transparent", color : "white", width : "97%", height : "7vh", paddingLeft : "10px", fontSize : "15px", borderRadius : "10px" }} onClick={() => (window.location.href = "homeAnalysisjs")}>Analysis</button>
         </div>
+
         <div id="aiContainer">
           <h2 style={{ marginBottom: "1vh" }}>AI Chat</h2>
 
@@ -111,8 +127,8 @@ export default function AIChat() {
               </div>
             ))}
           </div>
-          
-          <div style = {{display : "flex", alignItems : "center", justifyContent : "center"}}>
+
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
